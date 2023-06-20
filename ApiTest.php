@@ -6,10 +6,11 @@ require_once 'Api.php';
 
 class ApiTest extends TestCase
 {
-    public function testGetAllContacts()
+    public function testGetAllProperties()
     {
+        $myPersonalKey = '1tdbakxvogt3rfgvliz21a8bgil1mu';
         $api = new Api($myPersonalKey);
-        $response = $api->getAllContacts();
+        $response = $api->getAllProperties();
 
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertJson($response->getBody()->getContents());
